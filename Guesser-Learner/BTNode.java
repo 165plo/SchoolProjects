@@ -1,11 +1,10 @@
 
 /**
- * This is the node for a binary node.
+ * This is the node for a binary tree node.
  * 
  * @author David Firestone
- * @version 1
  */
-public class BTNode<T>
+public class BTNode<T> implements java.io.Serializable
 {
    private BTNode left;
    private BTNode right;
@@ -16,9 +15,19 @@ public class BTNode<T>
     * the variables to null
     */
    public BTNode(){
-       left=null;
-       right=null;
-       data=null;
+       this.left=null;
+       this.right=null;
+       this.data=null;
+    }
+    
+    /***
+    * This is the main constructor and defaults all
+    * the variables to null
+    */
+   public BTNode(T data){
+       this.left=null;
+       this.right=null;
+       this.data=data;
     }
     
     /***
@@ -80,7 +89,7 @@ public class BTNode<T>
      * 
      * @param   T Takes T type data set to to new value
      */
-    public void setData(){
+    public void setData(T data){
         this.data=data;
     }
     
@@ -112,7 +121,17 @@ public class BTNode<T>
         return data;
     }
     
+    /***
+     * Overrides the object to string method and shows
+     * the link on the left then its data and then the
+     * link on the right.
+     * 
+     * @return String   A String of the left link then 
+     * the data then the right link
+     */
     public String toString(){
-        return null;
+        String display = "[ "+getLeftNode()+" | "+getData()+" | "+getRightNode()+" ]";
+        return display;
     }
+    
 }
